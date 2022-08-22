@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="2022年夏季《移动软件开发》实验报告姓名：蒋林均  学号：20020007120     姓名和学号？ 蒋林均，20020007120    本实验属于哪门课程？ 中国海洋大学22夏《移动软件开发》   实验名称？ 实验3：视频播放小程序   博客地址？ http:&#x2F;&#x2F;www.chainglin.com   Github仓库地址？ https:&#x2F;&#x2F;github.com&#x2F;ChaingLin&#x2F;Mob">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MAD Lab3 Report">
+<meta property="og:url" content="http://example.com/2022/08/22/MAD-Lab3-Report/index.html">
+<meta property="og:site_name" content="Chaing&#39;s Blog">
+<meta property="og:description" content="2022年夏季《移动软件开发》实验报告姓名：蒋林均  学号：20020007120     姓名和学号？ 蒋林均，20020007120    本实验属于哪门课程？ 中国海洋大学22夏《移动软件开发》   实验名称？ 实验3：视频播放小程序   博客地址？ http:&#x2F;&#x2F;www.chainglin.com   Github仓库地址？ https:&#x2F;&#x2F;github.com&#x2F;ChaingLin&#x2F;Mob">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://images-1313381391.cos.ap-nanjing.myqcloud.com/img/%E6%88%AA%E5%B1%8F2022-08-22%2015.18.18.png">
+<meta property="og:image" content="https://images-1313381391.cos.ap-nanjing.myqcloud.com/img/%E6%88%AA%E5%B1%8F2022-08-22%2015.19.08.png">
+<meta property="og:image" content="https://images-1313381391.cos.ap-nanjing.myqcloud.com/img/%E6%88%AA%E5%B1%8F2022-08-22%2015.26.17.png">
+<meta property="og:image" content="https://images-1313381391.cos.ap-nanjing.myqcloud.com/img/%E6%88%AA%E5%B1%8F2022-08-22%2015.39.43.png">
+<meta property="og:image" content="https://images-1313381391.cos.ap-nanjing.myqcloud.com/img/%E6%88%AA%E5%B1%8F2022-08-22%2015.41.38.png">
+<meta property="article:published_time" content="2022-08-22T07:58:53.000Z">
+<meta property="article:modified_time" content="2022-08-22T08:00:08.786Z">
+<meta property="article:author" content="Chiang">
+<meta property="article:tag" content="《移动软件开发》">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://images-1313381391.cos.ap-nanjing.myqcloud.com/img/%E6%88%AA%E5%B1%8F2022-08-22%2015.18.18.png">
+
+<link rel="canonical" href="http://example.com/2022/08/22/MAD-Lab3-Report/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>MAD Lab3 Report | Chaing's Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Chaing's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/08/22/MAD-Lab3-Report/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Chiang">
+      <meta itemprop="description" content="b站关注永雏塔菲，关注永雏塔菲谢谢喵">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Chaing's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          MAD Lab3 Report
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2022-08-22 15:58:53 / 修改时间：16:00:08" itemprop="dateCreated datePublished" datetime="2022-08-22T15:58:53+08:00">2022-08-22</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="2022年夏季《移动软件开发》实验报告"><a href="#2022年夏季《移动软件开发》实验报告" class="headerlink" title="2022年夏季《移动软件开发》实验报告"></a>2022年夏季《移动软件开发》实验报告</h1><center>姓名：蒋林均  学号：20020007120</center>
+
+<table>
+<thead>
+<tr>
+<th>姓名和学号？</th>
+<th>蒋林均，20020007120</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>本实验属于哪门课程？</td>
+<td>中国海洋大学22夏《移动软件开发》</td>
+</tr>
+<tr>
+<td>实验名称？</td>
+<td>实验3：视频播放小程序</td>
+</tr>
+<tr>
+<td>博客地址？</td>
+<td><a target="_blank" rel="noopener" href="http://www.chainglin.com/">http://www.chainglin.com</a></td>
+</tr>
+<tr>
+<td>Github仓库地址？</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/ChaingLin/Mobile-App-Dev/tree/lab3">https://github.com/ChaingLin/Mobile-App-Dev/tree/lab3</a></td>
+</tr>
+</tbody></table>
+<p>（备注：将实验报告发布在博客、代码公开至 github 是 <strong>加分项</strong>，不是必须做的）</p>
+<span id="more"></span>
+
+<h2 id="一、实验目标"><a href="#一、实验目标" class="headerlink" title="一、实验目标"></a><strong>一、实验目标</strong></h2><p>1、掌握视频列表的切换方法；</p>
+<p>2、掌握视频自动播放方法；</p>
+<p>3、掌握视频随机颜色弹幕效果。</p>
+<p>实验文档：<a target="_blank" rel="noopener" href="https://oucaigroup.feishu.cn/docx/doxcnO6HIwNOSG1C73tSXLa02Gg">https://oucaigroup.feishu.cn/docx/doxcnO6HIwNOSG1C73tSXLa02Gg</a></p>
+<h2 id="二、实验步骤"><a href="#二、实验步骤" class="headerlink" title="二、实验步骤"></a>二、实验步骤</h2><h4 id="创建页面"><a href="#创建页面" class="headerlink" title="创建页面"></a>创建页面</h4><p>手动创建页面如前两次实验，略</p>
+<h4 id="视图设计"><a href="#视图设计" class="headerlink" title="视图设计"></a>视图设计</h4><h5 id="导航栏设计"><a href="#导航栏设计" class="headerlink" title="导航栏设计"></a>导航栏设计</h5><ul>
+<li>在<code>/Users/tim/Developer/WechatProjects/vedioDemo/app.json</code>中编写以下代码</li>
+</ul>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;pages&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">    <span class="string">&quot;pages/index/index&quot;</span></span><br><span class="line">  <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;window&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;navigationBarBackgroundColor&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#987938&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;navigationBarTitleText&quot;</span><span class="punctuation">:</span> <span class="string">&quot;口述校史&quot;</span></span><br><span class="line">  <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;sitemapLocation&quot;</span><span class="punctuation">:</span> <span class="string">&quot;sitemap.json&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>效果如图：</p>
+<img src="https://images-1313381391.cos.ap-nanjing.myqcloud.com/img/%E6%88%AA%E5%B1%8F2022-08-22%2015.18.18.png" alt="截屏2022-08-22 15.18.18" style="zoom:50%;" /></li>
+</ul>
+<h5 id="index页面设计"><a href="#index页面设计" class="headerlink" title="index页面设计"></a>index页面设计</h5><ul>
+<li><p>index页面框架图</p>
+<img src="https://images-1313381391.cos.ap-nanjing.myqcloud.com/img/%E6%88%AA%E5%B1%8F2022-08-22%2015.19.08.png" alt="截屏2022-08-22 15.19.08" style="zoom:50%;" /></li>
+<li><p>在<code>/Users/tim/Developer/WechatProjects/vedioDemo/pages/index/index.wxml</code>中编写如下代码，搭建框架</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--index.wxml--&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- Area1: 视频播放器--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">video</span> <span class="attr">id</span> =<span class="string">&#x27;myVideo&#x27;</span> <span class="attr">controls</span> <span class="attr">src</span>=<span class="string">&quot;&#123;&#123;src&#125;&#125;&quot;</span> <span class="attr">controls</span> <span class="attr">enable-danmu</span> <span class="attr">danmu-btn</span>&gt;</span><span class="tag">&lt;/<span class="name">video</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- Area2: 弹幕控制--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">&#x27;danmuArea&#x27;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">placeholder</span>=<span class="string">&quot;请输入弹幕内容&quot;</span> <span class="attr">bindinput</span>=<span class="string">&#x27;getDanmu&#x27;</span>&gt;</span><span class="tag">&lt;/<span class="name">input</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> <span class="attr">bindtap</span>=<span class="string">&#x27;sendDanmu&#x27;</span>&gt;</span>发送弹幕<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- Area3: 视频列表 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">&#x27;videoList&#x27;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">&#x27;videoBar&#x27;</span> <span class="attr">wx:for</span>=<span class="string">&#x27;&#123;&#123;list&#125;&#125;&#x27;</span> <span class="attr">wx:key</span>=<span class="string">&#x27;index&#x27;</span> <span class="attr">data-url</span>=<span class="string">&#x27;&#123;&#123;item.videoUrl&#125;&#125;&#x27;</span> <span class="attr">bindtap</span>=<span class="string">&#x27;playVideo&#x27;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">image</span> <span class="attr">src</span>=<span class="string">&#x27;/images/play.png&#x27;</span>&gt;</span><span class="tag">&lt;/<span class="name">image</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">text</span>&gt;</span>&#123;&#123;item.title&#125;&#125;<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<li><p>在<code>/Users/tim/Developer/WechatProjects/vedioDemo/pages/index/index.wxss</code>中编写样式</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**index.wxss**/</span></span><br><span class="line"><span class="comment">/* 视频组件样式 */</span></span><br><span class="line"><span class="selector-tag">video</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100%</span>;   <span class="comment">/* 视频组件宽度为100 */</span></span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line"><span class="selector-class">.danmuArea</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">flex-direction</span>: row;  <span class="comment">/* 水平方向排列*/</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Area 2 */</span></span><br><span class="line"><span class="selector-tag">input</span> &#123;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">1</span>rpx solid <span class="number">#987938</span>;  <span class="comment">/*1rpx宽的实线棕色边框*/</span></span><br><span class="line">  <span class="attribute">flex-grow</span>: <span class="number">1</span>;  <span class="comment">/*扩张多余空间宽度*/</span></span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100</span>rpx;  <span class="comment">/*高度*/</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">button</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: white;   <span class="comment">/*字体颜色*/</span></span><br><span class="line">  <span class="attribute">background-color</span>: <span class="number">#987938</span>; <span class="comment">/*背景颜色*/</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Area3 */</span></span><br><span class="line"><span class="selector-class">.videoList</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">min-height</span>: <span class="number">400</span>rpx;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.videoBar</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">95%</span>;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">flex-direction</span>: row;</span><br><span class="line">  <span class="attribute">border-bottom</span>: <span class="number">1</span>rpx solid <span class="number">#987938</span>;</span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">10</span>rpx; <span class="comment">/*外边距*/</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">image &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">70</span>rpx;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">70</span>rpx;</span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">20</span>rpx;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">text &#123;</span><br><span class="line">  <span class="attribute">font-size</span>: <span class="number">45</span>rpx;</span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#987938</span>;</span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">20</span>rpx;</span><br><span class="line">  <span class="attribute">flex-grow</span>: <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h5 id="效果预览如图（视频列表在后添加"><a href="#效果预览如图（视频列表在后添加" class="headerlink" title="效果预览如图（视频列表在后添加"></a>效果预览如图（视频列表在后添加</h5><img src="https://images-1313381391.cos.ap-nanjing.myqcloud.com/img/%E6%88%AA%E5%B1%8F2022-08-22%2015.26.17.png" alt="截屏2022-08-22 15.26.17" style="zoom: 33%;" />
+
+<h4 id="逻辑实现"><a href="#逻辑实现" class="headerlink" title="逻辑实现"></a>逻辑实现</h4><h5 id="保存视频列表及视频信息"><a href="#保存视频列表及视频信息" class="headerlink" title="保存视频列表及视频信息"></a>保存视频列表及视频信息</h5><ul>
+<li><p>在<code>pages/index/index.js</code>的data属性中追加list数组，用于存放视频信息</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Page</span>(&#123;</span><br><span class="line"></span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   * 页面的初始数据</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  <span class="attr">data</span>: &#123;</span><br><span class="line">    <span class="attr">danmuTxt</span>: <span class="string">&#x27;&#x27;</span>,</span><br><span class="line">    <span class="attr">list</span>: [</span><br><span class="line">      &#123;</span><br><span class="line">      <span class="attr">id</span>: <span class="string">&#x27;1001&#x27;</span>,</span><br><span class="line">      <span class="attr">title</span>: <span class="string">&#x27;杨国宜先生口述校史实录&#x27;</span>,</span><br><span class="line">      <span class="attr">videoUrl</span>: <span class="string">&#x27;http://arch.ahnu.edu.cn/__local/6/CB/D1/C2DF3FC847F4CE2ABB67034C595_025F0082_ABD7AE2.mp4?e=.mp4&#x27;</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="attr">id</span>: <span class="string">&#x27;1002&#x27;</span>,</span><br><span class="line">      <span class="attr">title</span>: <span class="string">&#x27;唐成伦先生口述校史实录&#x27;</span>,</span><br><span class="line">      <span class="attr">videoUrl</span>: <span class="string">&#x27;http://arch.ahnu.edu.cn/__local/E/31/EB/2F368A265E6C842BB6A63EE5F97_425ABEDD_7167F22.mp4?e=.mp4&#x27;</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="attr">id</span>: <span class="string">&#x27;1003&#x27;</span>,</span><br><span class="line">      <span class="attr">title</span>: <span class="string">&#x27;倪光明先生口述校史实录&#x27;</span>,</span><br><span class="line">      <span class="attr">videoUrl</span>: <span class="string">&#x27;http://arch.ahnu.edu.cn/__local/9/DC/3B/35687573BA2145023FDAEBAFE67_AAD8D222_925F3FF.mp4?e=.mp4&#x27;</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="attr">id</span>: <span class="string">&#x27;1004&#x27;</span>,</span><br><span class="line">      <span class="attr">title</span>: <span class="string">&#x27;吴仪兴先生口述校史实录&#x27;</span>,</span><br><span class="line">      <span class="attr">videoUrl</span>: <span class="string">&#x27;http://arch.ahnu.edu.cn/__local/5/DA/BD/7A27865731CF2B096E90B522005_A29CB142_6525BCF.mp4?e=.mp4&#x27;</span></span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">  &#125;,</span><br><span class="line">	...</span><br><span class="line">)&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h5 id="点击视频列表中的播放按钮播放视频"><a href="#点击视频列表中的播放按钮播放视频" class="headerlink" title="点击视频列表中的播放按钮播放视频"></a>点击视频列表中的播放按钮播放视频</h5><ul>
+<li><p>在<code>pages/index/index.js</code>的Page中添加下列函数</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 播放视频</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="attr">playVideo</span>: <span class="keyword">function</span>(<span class="params">e</span>) &#123;</span><br><span class="line">  <span class="variable language_">this</span>.<span class="property">videoCtx</span>.<span class="title function_">stop</span>()</span><br><span class="line">  <span class="variable language_">this</span>.<span class="title function_">setData</span>(&#123;</span><br><span class="line">    <span class="attr">src</span>: e.<span class="property">currentTarget</span>.<span class="property">dataset</span>.<span class="property">url</span></span><br><span class="line">  &#125;)</span><br><span class="line">  <span class="variable language_">this</span>.<span class="property">videoCtx</span>.<span class="title function_">play</span>()</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h5 id="实现发送以及更新弹幕"><a href="#实现发送以及更新弹幕" class="headerlink" title="实现发送以及更新弹幕"></a>实现发送以及更新弹幕</h5><ul>
+<li><p>在<code>pages/index/index.js</code>的Page中添加下列函数</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/** </span></span><br><span class="line"><span class="comment"> * 发送弹幕</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="attr">sendDanmu</span>: <span class="keyword">function</span>(<span class="params">e</span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> text = <span class="variable language_">this</span>.<span class="property">data</span>.<span class="property">danmuTxt</span>;</span><br><span class="line">  <span class="variable language_">this</span>.<span class="property">videoCtx</span>.<span class="title function_">sendDanmu</span>( &#123;</span><br><span class="line">    <span class="attr">text</span>:text,</span><br><span class="line">    <span class="attr">color</span>: <span class="title function_">getRandomColor</span>()</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;,</span><br><span class="line"></span><br><span class="line"><span class="comment">/** </span></span><br><span class="line"><span class="comment"> *  更新弹幕内容</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="attr">getDanmu</span>: <span class="keyword">function</span>(<span class="params">e</span>) &#123;</span><br><span class="line">  <span class="variable language_">this</span>.<span class="property">setData</span> ( &#123;</span><br><span class="line">    <span class="attr">danmuTxt</span>: e.<span class="property">detail</span>.<span class="property">value</span> </span><br><span class="line">  &#125;)</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h5 id="实现随机生成弹幕颜色"><a href="#实现随机生成弹幕颜色" class="headerlink" title="实现随机生成弹幕颜色"></a>实现随机生成弹幕颜色</h5><ul>
+<li><p>在<code>pages/index/index.js</code>后追加下列函数</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 生成随机颜色</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">getRandomColor</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> rgb = []</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; ++i) &#123;</span><br><span class="line">    <span class="keyword">let</span> color = <span class="title class_">Math</span>.<span class="title function_">floor</span>(<span class="title class_">Math</span>.<span class="title function_">random</span>() * <span class="number">256</span>).<span class="title function_">toString</span>(<span class="number">16</span>)</span><br><span class="line">    color = color.<span class="property">length</span> == <span class="number">1</span>?<span class="string">&#x27;0&#x27;</span>+ color : color</span><br><span class="line">    rgb.<span class="title function_">push</span>(color)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">&#x27;#&#x27;</span> + rgb.<span class="title function_">join</span>(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="三、程序运行结果"><a href="#三、程序运行结果" class="headerlink" title="三、程序运行结果"></a>三、程序运行结果</h2><h4 id="视频播放效果"><a href="#视频播放效果" class="headerlink" title="视频播放效果"></a>视频播放效果</h4><img src="https://images-1313381391.cos.ap-nanjing.myqcloud.com/img/%E6%88%AA%E5%B1%8F2022-08-22%2015.39.43.png" alt="截屏2022-08-22 15.39.43" style="zoom: 33%;" />
+
+<h4 id="弹幕发送效果"><a href="#弹幕发送效果" class="headerlink" title="弹幕发送效果"></a>弹幕发送效果</h4><img src="https://images-1313381391.cos.ap-nanjing.myqcloud.com/img/%E6%88%AA%E5%B1%8F2022-08-22%2015.41.38.png" alt="截屏2022-08-22 15.41.38" style="zoom:36%;" />
+
+
+
+<h2 id="四、问题总结与体会"><a href="#四、问题总结与体会" class="headerlink" title="四、问题总结与体会"></a>四、问题总结与体会</h2><p>本次实验进行顺利，没有遇到太多困难。</p>
+<p>学习了如何在小程序中使用视频播放控件。</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E3%80%8A%E7%A7%BB%E5%8A%A8%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E3%80%8B/" rel="tag"># 《移动软件开发》</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/08/19/MAD-Lab2-Report/" rel="prev" title="MAD Lab2 Report">
+      <i class="fa fa-chevron-left"></i> MAD Lab2 Report
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#2022%E5%B9%B4%E5%A4%8F%E5%AD%A3%E3%80%8A%E7%A7%BB%E5%8A%A8%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E3%80%8B%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A"><span class="nav-number">1.</span> <span class="nav-text">2022年夏季《移动软件开发》实验报告</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E5%AE%9E%E9%AA%8C%E7%9B%AE%E6%A0%87"><span class="nav-number">1.1.</span> <span class="nav-text">一、实验目标</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E5%AE%9E%E9%AA%8C%E6%AD%A5%E9%AA%A4"><span class="nav-number">1.2.</span> <span class="nav-text">二、实验步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E9%A1%B5%E9%9D%A2"><span class="nav-number">1.2.0.1.</span> <span class="nav-text">创建页面</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A7%86%E5%9B%BE%E8%AE%BE%E8%AE%A1"><span class="nav-number">1.2.0.2.</span> <span class="nav-text">视图设计</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%AF%BC%E8%88%AA%E6%A0%8F%E8%AE%BE%E8%AE%A1"><span class="nav-number">1.2.0.2.1.</span> <span class="nav-text">导航栏设计</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#index%E9%A1%B5%E9%9D%A2%E8%AE%BE%E8%AE%A1"><span class="nav-number">1.2.0.2.2.</span> <span class="nav-text">index页面设计</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%95%88%E6%9E%9C%E9%A2%84%E8%A7%88%E5%A6%82%E5%9B%BE%EF%BC%88%E8%A7%86%E9%A2%91%E5%88%97%E8%A1%A8%E5%9C%A8%E5%90%8E%E6%B7%BB%E5%8A%A0"><span class="nav-number">1.2.0.2.3.</span> <span class="nav-text">效果预览如图（视频列表在后添加</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%80%BB%E8%BE%91%E5%AE%9E%E7%8E%B0"><span class="nav-number">1.2.0.3.</span> <span class="nav-text">逻辑实现</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E4%BF%9D%E5%AD%98%E8%A7%86%E9%A2%91%E5%88%97%E8%A1%A8%E5%8F%8A%E8%A7%86%E9%A2%91%E4%BF%A1%E6%81%AF"><span class="nav-number">1.2.0.3.1.</span> <span class="nav-text">保存视频列表及视频信息</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%82%B9%E5%87%BB%E8%A7%86%E9%A2%91%E5%88%97%E8%A1%A8%E4%B8%AD%E7%9A%84%E6%92%AD%E6%94%BE%E6%8C%89%E9%92%AE%E6%92%AD%E6%94%BE%E8%A7%86%E9%A2%91"><span class="nav-number">1.2.0.3.2.</span> <span class="nav-text">点击视频列表中的播放按钮播放视频</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0%E5%8F%91%E9%80%81%E4%BB%A5%E5%8F%8A%E6%9B%B4%E6%96%B0%E5%BC%B9%E5%B9%95"><span class="nav-number">1.2.0.3.3.</span> <span class="nav-text">实现发送以及更新弹幕</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0%E9%9A%8F%E6%9C%BA%E7%94%9F%E6%88%90%E5%BC%B9%E5%B9%95%E9%A2%9C%E8%89%B2"><span class="nav-number">1.2.0.3.4.</span> <span class="nav-text">实现随机生成弹幕颜色</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E7%A8%8B%E5%BA%8F%E8%BF%90%E8%A1%8C%E7%BB%93%E6%9E%9C"><span class="nav-number">1.3.</span> <span class="nav-text">三、程序运行结果</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A7%86%E9%A2%91%E6%92%AD%E6%94%BE%E6%95%88%E6%9E%9C"><span class="nav-number">1.3.0.1.</span> <span class="nav-text">视频播放效果</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BC%B9%E5%B9%95%E5%8F%91%E9%80%81%E6%95%88%E6%9E%9C"><span class="nav-number">1.3.0.2.</span> <span class="nav-text">弹幕发送效果</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9B%E3%80%81%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%E4%B8%8E%E4%BD%93%E4%BC%9A"><span class="nav-number">1.4.</span> <span class="nav-text">四、问题总结与体会</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Chiang</p>
+  <div class="site-description" itemprop="description">b站关注永雏塔菲，关注永雏塔菲谢谢喵</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/n/%E6%B0%B8%E9%9B%8F%E5%A1%94%E8%8F%B2" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;n&#x2F;永雏塔菲" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/1265680561" title="Bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;1265680561" rel="noopener" target="_blank"><i class="fab fa-bilibili fa-fw"></i>Bilibili</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Chiang</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
